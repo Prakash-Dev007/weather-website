@@ -1,0 +1,22 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Ask Weather AI</title>
+</head>
+<body>
+    <h1>💬 Ask Weather AI</h1>
+    <form method="post" action="/ask">
+        <label>Enter your question:</label><br>
+        <input type="text" name="question" size="60" required />
+        <button type="submit">Ask</button>
+    </form>
+    <hr>
+    <c:if test="${not empty answer}">
+        <h3>🧠 AI Response:</h3>
+        <p><strong>Question:</strong> ${question}</p>
+        <p><strong>Answer:</strong> ${answer}</p>
+    </c:if>
+    <br>
+    <a href="/weather">🌦️ Back to Live Weather</a>
+</body>
+</html>
